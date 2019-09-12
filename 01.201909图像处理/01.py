@@ -10,7 +10,7 @@ print(img.shape) #打印大小
 cv.imshow("lena",img)  #显示
 rename = str(time.time())
 print(rename,height,width)
-cv.imwrite("./dest/lena2"+rename+".jpg",img) #存错
+#cv.imwrite("./dest/lena2"+rename+".jpg",img) #存错
 
 #放大一倍
 largedim = (int(height*1.5),int(width*1.5))
@@ -34,4 +34,10 @@ print(img_enMindim.shape)
 subval = np.full(img.shape,100,dtype=np.uint8)
 subimg = cv.subtract(img,subval)
 cv.imshow("subimg",subimg)
+
+###降低灰度级数8bit图像降为6bit。
+destImg = img//4
+cv.imshow("6bit",destImg )
+print(destImg)
+
 cv.waitKey(0)
