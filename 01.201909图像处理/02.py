@@ -42,7 +42,7 @@ axs[1,2].set_title("package skimage stretch 5")
 axs[1,2].imshow(gamma_img,cmap='gray')
 
 
-#skimage的直方图均衡函数
+#的直方图均衡函数
 equ = cv.equalizeHist(img)
 #cv.imshow('equalization by opencv', np.hstack((img, equ)))  # 并排显示
 
