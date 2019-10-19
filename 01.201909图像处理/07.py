@@ -41,7 +41,8 @@ openErodeFingerImg = cv.erode(fingerImg,erodeKernal, iterations=2)
 openFingerImg = cv.dilate(openErodeFingerImg, erodeKernal, iterations=2)
 axes[2, 0].imshow(fingerImg, cmap="gray"),      axes[2, 0].set_title("开操作原图")
 axes[2, 1].imshow(openFingerImg, cmap="gray"),  axes[2, 1].set_title("开操作（腐蚀，膨胀2次）")
-axes[2, 2].imshow( cv.erode( cv.dilate(openFingerImg, erodeKernal, iterations=2), erodeKernal), cmap="gray"), axes[2,2].set_title("闭操作（膨胀2次，腐蚀1次)")
+#对开操作图像进行闭操作。
+axes[2, 2].imshow( cv.erode( cv.dilate(openFingerImg, erodeKernal, iterations=1), erodeKernal), cmap="gray"), axes[2,2].set_title("闭操作（膨胀、腐蚀1次)")
 # cv.imshow("erode", openFingerImg)
 # cv.imshow("dilate", cv.dilate(openFingerImg, erodeKernal, iterations=2))
 
